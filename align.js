@@ -324,7 +324,7 @@
             a.href = url;
             a.download = 'maschera.jpg';
             a.click();
-            URL.revokeObjectURL(url);
+            setTimeout(() => URL.revokeObjectURL(url), 10000);
         }, 'image/jpeg', 0.92);
     });
 
