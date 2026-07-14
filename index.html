@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lezione ML #1 — Maschere intelligenti</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <script src="vendor/pdf.min.js"></script>
+</head>
+<body>
+    <!-- Sfondo decorativo -->
+    <div class="bg-gradient"></div>
+    <div class="bg-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+    </div>
+
+    <main class="container">
+        <header class="hero">
+            <p class="hero-kicker">Lezione ML #1</p>
+            <h1>Maschere intelligenti</h1>
+            <p class="hero-sub">
+                Disegna una maschera su carta e falla apparire sulla tua faccia
+                grazie all'intelligenza artificiale! Segui i passaggi qui sotto. 🤖🎭
+            </p>
+        </header>
+
+        <!-- PASSO 1 -->
+        <section class="step-card">
+            <div class="step-number">1</div>
+            <div class="step-content">
+                <h2>🖨️ Stampa e colora</h2>
+                <p>
+                    Stampa il foglio con la maschera e <strong>colorala a piacimento</strong>:
+                    pennarelli, matite, pastelli… scegli tu!
+                </p>
+                <a class="btn btn-primary" href="https://mcni.it/ml/mask" target="_blank" rel="noopener">
+                    Apri il foglio da stampare ↗
+                </a>
+            </div>
+        </section>
+
+        <!-- PASSO 2 -->
+        <section class="step-card">
+            <div class="step-number">2</div>
+            <div class="step-content">
+                <h2>📠 Scansiona il foglio</h2>
+                <p>
+                    Con la stampante, invia la scansione a
+                    <code>licenze@juvenes.it</code>: il file arriverà da solo nella
+                    cartella online. Poi <strong>scarica il file .pdf</strong> della tua scansione.
+                </p>
+                <a class="btn btn-primary" href="https://mcni.it/ml/cartella" target="_blank" rel="noopener">
+                    Apri la cartella delle scansioni ↗
+                </a>
+            </div>
+        </section>
+
+        <!-- PASSO 3: STRUMENTO ALLINEA -->
+        <section class="step-card step-card-wide">
+            <div class="step-number">3</div>
+            <div class="step-content">
+                <h2>🎯 Allinea la scansione</h2>
+                <p>
+                    Carica la tua scansione e falla <strong>combaciare</strong> con il disegno
+                    della faccia che vedi sotto. Trascina per spostarla, usa gli slider per
+                    ingrandirla o renderla trasparente. Quando è perfetta, scarica il file .jpg!
+                </p>
+
+                <div id="align-tool">
+                    <div class="align-upload">
+                        <label class="btn btn-primary" for="file-input">📂 Carica la scansione (.pdf)</label>
+                        <input type="file" id="file-input" accept=".pdf,application/pdf,image/*" hidden>
+                        <span id="file-status" class="file-status">Nessun file caricato</span>
+                    </div>
+
+                    <div class="align-canvas-wrap" id="canvas-wrap">
+                        <canvas id="align-canvas" width="1000" height="1000"></canvas>
+                        <div class="canvas-hint" id="canvas-hint">
+                            Trascina qui il tuo file<br>oppure usa il pulsante qui sopra
+                        </div>
+                    </div>
+
+                    <div class="align-controls" id="align-controls">
+                        <div class="control-row">
+                            <label for="opacity-slider">👻 Trasparenza</label>
+                            <input type="range" id="opacity-slider" min="10" max="100" value="55">
+                        </div>
+                        <div class="control-row">
+                            <label for="zoom-slider">🔍 Dimensione</label>
+                            <input type="range" id="zoom-slider" min="50" max="200" value="100">
+                        </div>
+                        <div class="control-row control-buttons">
+                            <button class="btn" id="rotate-left" title="Ruota a sinistra">⟲ Ruota</button>
+                            <button class="btn" id="rotate-right" title="Ruota a destra">⟳ Ruota</button>
+                            <button class="btn" id="reset-btn">↺ Ricomincia</button>
+                            <button class="btn btn-primary" id="download-btn">⬇️ Scarica .jpg</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PASSO 4 -->
+        <section class="step-card">
+            <div class="step-number">4</div>
+            <div class="step-content">
+                <h2>🪄 Prova la maschera!</h2>
+                <p>
+                    Apri il codice nell'editor <strong>P5.js</strong>, premi <strong>▶ Play</strong>
+                    e seleziona il file <code>.jpg</code> che hai appena scaricato.
+                    Guarda la webcam… magia! ✨
+                </p>
+                <a class="btn btn-primary" href="https://mcni.it/ml/codice" target="_blank" rel="noopener">
+                    Apri il codice su P5.js ↗
+                </a>
+            </div>
+        </section>
+
+        <!-- PASSO 5 -->
+        <section class="step-card step-card-extra">
+            <div class="step-number">★</div>
+            <div class="step-content">
+                <h2>🎨 Extra: ritocca la maschera</h2>
+                <p>
+                    Ti avanza tempo? Apri il file <code>.jpg</code> con <strong>Paint</strong> o
+                    <strong>Photopea</strong> per sistemare i dettagli, ad esempio
+                    nascondere le righe del template.
+                </p>
+                <a class="btn" href="https://www.photopea.com/" target="_blank" rel="noopener">
+                    Apri Photopea ↗
+                </a>
+            </div>
+        </section>
+
+        <footer class="page-footer">
+            Lezioni ML · Maschere intelligenti
+        </footer>
+    </main>
+
+    <script src="align.js"></script>
+</body>
+</html>
